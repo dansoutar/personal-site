@@ -5,12 +5,18 @@ interface Props {
   align?: 'start' | 'center'
 }
 
+import Icon from '../components/Icon.astro'
+import Pill from '../components/Pill.astro'
+
 const { align = 'center', tagline, title } = Astro.props
 ---
 
 <header class:list={['hero stack gap-4', align]}>
-  <div class='stack gap-2'>
+  <div class='stack gap-4'>
     <h1 class='title'>{title}</h1>
+    <div class='roles'>
+      <Pill><Icon icon='code' size='1.33em' />Frontend Developer</Pill>
+    </div>
     {tagline && <p class='tagline'>{tagline}</p>}
   </div>
   <slot />
